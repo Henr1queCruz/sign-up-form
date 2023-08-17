@@ -3,25 +3,41 @@
   src: url(../fonts/Norse-Bold.otf);
 }
 
+:root {
+  --primary-color: #121212;
+  --background-color: #f9fafb;
+
+  --color-white: #fff;
+  --second-white: #ffffffb3;
+}
+
 * {
-  margin: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--background-color);
+  /* max-width: 1280px; */
 }
 
 main {
   display: flex;
+  min-height: 100vh;
+}
 
-  height: 100vh;
-  width: 100vw;
+a {
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* left section  */
 
 .left-section {
-  width: 70vw;
+  flex: 0.8;
   background-image: url("../images/mads-schmidt-rasmussen-xfngap_DToE-unsplash.jpg");
   background-size: cover;
-  color: white;
-
   position: relative;
 }
 
@@ -30,35 +46,126 @@ main {
   align-items: center;
   justify-content: center;
 
-  padding: 10px;
+  font-family: myFirstFont;
+  font-size: 2rem;
+  letter-spacing: 2px;
 
-  background-color: rgb(0, 0, 0, 0.4);
+  background-color: #00000066;
+  color: var(--color-white);
 
   position: relative;
-  top: 24vh;
-
-  font-family: myFirstFont;
-  font-size: 30px;
-  letter-spacing: 2px;
+  top: 7em;
 }
 
 .title img {
   height: 100px;
-  margin-right: 15px;
+  padding: 0.3em;
 }
 
 .img-credit {
-  bottom: 5px;
+  font-size: 0.9rem;
+  padding: 0.3em;
 
   position: absolute;
-  bottom: 5px;
-  right: 5px;
+  bottom: 0;
+  right: 0;
 
-  font-size: 14px;
+  color: var(--second-white);
 }
 
-.img-credit a:visited {
-  color: white;
+.img-credit a {
+  color: var(--second-white);
 }
 
 /* right section */
+
+.right-section {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  padding: 10rem 3rem 0;
+  gap: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--color-white);
+  padding: 1rem 3rem 3rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-section p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.input-group div label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.input-group div input {
+  width: 75%;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+input:focus {
+  border: 1px solid blue;
+  box-shadow: 2px 1px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-group div input.error {
+  border: 1px solid red;
+}
+
+.submit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 2rem 3rem;
+}
+
+.submit-section button {
+  width: 30%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 36px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 23px;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--primary-color);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.submit-section a {
+  color: var(--primary-color);
+}
